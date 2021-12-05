@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "bedrock_features",
+  "version": "${version}",
+
+  "name": "Bedrock Features",
+  "description": "Adds some parity between Bedrock and Java edition.",
+  "authors": [
+    "Micalobia"
+  ],
+  "contact": {
+    "homepage": "https://micalobia.dev"
+  },
+
+  "license": "LGPL-3.0-or-later",
+  "icon": "assets/bedrock_features/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.micalobia.bedrock_features.BedrockFeaturesMod"
+    ]
+  },
+  "mixins": [
+    "bedrock_features.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+  }
+}
