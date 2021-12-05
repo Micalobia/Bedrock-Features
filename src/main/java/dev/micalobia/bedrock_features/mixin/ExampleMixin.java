@@ -1,6 +1,6 @@
 package dev.micalobia.bedrock_features.mixin;
 
-import dev.micalobia.bedrock_features.BedrockFeaturesMod;
+import dev.micalobia.bedrock_features.BedrockFeatures;
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ExampleMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		BedrockFeaturesMod.LOGGER.info("This line is printed by Bedrock Features's ExampleMixin!");
+		BedrockFeatures.LOGGER.info("This line is printed by Bedrock Features's ExampleMixin!");
 	}
 }

@@ -18,7 +18,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.micalobia.bedrock_features.BedrockFeaturesMod"
+      "dev.micalobia.bedrock_features.BedrockFeatures"
+    ],
+    "client": [
+      "dev.micalobia.bedrock_features.BedrockFeaturesClient"
     ]
   },
   "mixins": [
