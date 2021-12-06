@@ -27,6 +27,7 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome.Precipitation;
@@ -43,7 +44,19 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 	}
 
 	public static int colorProvider(BlockState state, BlockView view, BlockPos pos, int tintIndex) {
-		PotionCauldronBlockEntity entity = Objects.requireNonNull((PotionCauldronBlockEntity) view.getBlockEntity(pos));
+		PotionCauldronBlockEntity entity = (PotionCauldronBlockEntity) view.getBlockEntity(pos);
+		if(entity == null)
+			return switch(tintIndex) {
+				case 0 -> colorProvider(state, view, pos.offset(Direction.DOWN), 1);
+				case 6 -> 0xF800F8;
+				default -> {
+					Direction[] values = Direction.values();
+					BlockPos _pos = pos
+							.offset(values[tintIndex - 1].getOpposite())
+							.offset(values[tintIndex]);
+					yield colorProvider(state, view, _pos, tintIndex + 1);
+				}
+			};
 		return entity.getRenderColor();
 	}
 

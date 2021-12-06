@@ -20,6 +20,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -35,7 +36,19 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 	}
 
 	public static int colorProvider(BlockState state, BlockView view, BlockPos pos, int tintIndex) {
-		DyeCauldronBlockEntity entity = Objects.requireNonNull((DyeCauldronBlockEntity) view.getBlockEntity(pos));
+		DyeCauldronBlockEntity entity = (DyeCauldronBlockEntity) view.getBlockEntity(pos);
+		if(entity == null)
+			return switch(tintIndex) {
+				case 0 -> colorProvider(state, view, pos.offset(Direction.DOWN), 1);
+				case 6 -> 0x385DC6;
+				default -> {
+					Direction[] values = Direction.values();
+					BlockPos _pos = pos
+							.offset(values[tintIndex - 1].getOpposite())
+							.offset(values[tintIndex]);
+					yield colorProvider(state, view, _pos, tintIndex + 1);
+				}
+			};
 		return entity.getColor();
 	}
 
