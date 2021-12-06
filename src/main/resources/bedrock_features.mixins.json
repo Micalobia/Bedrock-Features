@@ -4,6 +4,7 @@
   "package": "dev.micalobia.bedrock_features.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "item.FoodComponentAccessor",
     "item.ItemAccessor"
   ],
   "client": [
