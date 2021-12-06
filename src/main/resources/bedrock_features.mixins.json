@@ -4,6 +4,7 @@
   "package": "dev.micalobia.bedrock_features.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "entity.mob.CreeperEntityMixin",
     "item.FoodComponentAccessor",
     "item.ItemAccessor"
   ],
