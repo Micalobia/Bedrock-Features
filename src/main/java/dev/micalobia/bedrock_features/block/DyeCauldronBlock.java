@@ -22,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
@@ -44,7 +45,7 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 	}
 
 	public static class Behaviors {
-		private static final Map<Item, CauldronBehavior> MAP;
+		public static final Map<Item, CauldronBehavior> MAP;
 
 		static {
 			MAP = CauldronBehavior.createMap();
@@ -70,7 +71,10 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 			if(!world.isClient) {
 				DyeCauldronBlockEntity entity = Objects.requireNonNull((DyeCauldronBlockEntity) world.getBlockEntity(pos));
 				dyeableItem.setColor(stack, entity.getColor());
+				player.incrementStat(BFStats.DYE_ARMOR);
 				LeveledCauldronBlock.decrementFluidLevel(state, world, pos);
+				world.emitGameEvent(null, GameEvent.FLUID_PICKUP, pos);
+				world.playSound(null, pos, SoundEvents.ITEM_DYE_USE, SoundCategory.BLOCKS, 1f, 1f);
 			}
 			return ActionResult.success(world.isClient);
 		}
@@ -88,6 +92,7 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 				DyeCauldronBlockEntity entity = Objects.requireNonNull((DyeCauldronBlockEntity) world.getBlockEntity(pos));
 				entity.blendAndSetColor(dyeColor);
 				entity.sync();
+				player.incrementStat(BFStats.DYE_WATER);
 				world.playSound(null, pos, SoundEvents.ITEM_DYE_USE, SoundCategory.BLOCKS, 1f, 1f);
 			}
 			return ActionResult.success(world.isClient);

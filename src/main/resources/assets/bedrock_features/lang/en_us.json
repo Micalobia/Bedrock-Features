@@ -1,0 +1,7 @@
+{
+  "stat.bedrock_features.dye_armor": "Armor Dyed using Cauldron",
+  "stat.bedrock_features.dye_water": "Times Dyed Water in Cauldron",
+  "stat.bedrock_features.tip_arrows": "Arrows Tipped using Cauldron",
+  "block.bedrock_features.dye_cauldron": "Dye Cauldron",
+  "block.bedrock_features.potion_cauldron": "Potion Cauldron"
+}

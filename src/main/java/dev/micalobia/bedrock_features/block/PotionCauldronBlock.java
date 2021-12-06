@@ -89,7 +89,7 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 	}
 
 	public static class Behaviors {
-		private static final Map<Item, CauldronBehavior> MAP;
+		public static final Map<Item, CauldronBehavior> MAP;
 
 		static {
 			MAP = CauldronBehavior.createMap();
@@ -116,6 +116,7 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 				player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
 				world.setBlockState(pos, state.cycle(LEVEL));
 				world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_EMPTY, SoundCategory.BLOCKS, 1f, 1f);
+				world.emitGameEvent(null, GameEvent.FLUID_PLACE, pos);
 				entity.sync();
 			} else {
 				if(entity.getRenderColor() != PotionUtil.getColor(stack)) return ActionResult.PASS;
@@ -170,8 +171,11 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 				else
 					count = maxCount;
 				newStack.setCount(count);
+				player.increaseStat(BFStats.TIP_ARROWS, count);
 				player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, newStack));
 				world.setBlockState(pos, Blocks.CAULDRON.getDefaultState());
+				world.emitGameEvent(null, GameEvent.FLUID_PICKUP, pos);
+				world.playSound(null, pos, SoundEvents.ITEM_DYE_USE, SoundCategory.BLOCKS, 1f, 1f);
 			}
 			return ActionResult.success(world.isClient);
 		}
@@ -189,7 +193,7 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 				player.incrementStat(Stats.USED.getOrCreateStat(item));
 				LeveledCauldronBlock.decrementFluidLevel(state, world, pos);
 				world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1f, 1f);
-				world.emitGameEvent(null, GameEvent.FLUID_PLACE, pos);
+				world.emitGameEvent(null, GameEvent.FLUID_PICKUP, pos);
 			}
 			return ActionResult.success(world.isClient);
 		}
