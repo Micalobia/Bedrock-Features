@@ -3,5 +3,9 @@
   "stat.bedrock_features.dye_water": "Times Dyed Water in Cauldron",
   "stat.bedrock_features.tip_arrows": "Arrows Tipped using Cauldron",
   "block.bedrock_features.dye_cauldron": "Dye Cauldron",
-  "block.bedrock_features.potion_cauldron": "Potion Cauldron"
+  "block.bedrock_features.potion_cauldron": "Potion Cauldron",
+  "advancements.bedrock.root.title": "Bedrock",
+  "advancements.bedrock.root.description": "All you could want from Bedrock Edition",
+  "advancements.bedrock.tie_dye_outfit.title": "Tie Dye Outfit",
+  "advancements.bedrock.tie_dye_outfit.description": "Use a cauldron to dye all 4 unique pieces of leather armor"
 }

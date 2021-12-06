@@ -1,0 +1,88 @@
+{
+  "parent": "bedrock_features:root",
+  "display": {
+    "icon": {
+      "item": "minecraft:bedrock"
+    },
+    "title": {
+      "translate": "advancements.bedrock.tie_dye_outfit.title"
+    },
+    "description": {
+      "translate": "advancements.bedrock.tie_dye_outfit.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "dye_boots": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "block": {
+            "blocks": [
+              "bedrock_features:dye_cauldron"
+            ]
+          }
+        },
+        "item": {
+          "items": [
+            "minecraft:leather_boots"
+          ]
+        }
+      }
+    },
+    "dye_pants": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "block": {
+            "blocks": [
+              "bedrock_features:dye_cauldron"
+            ]
+          }
+        },
+        "item": {
+          "items": [
+            "minecraft:leather_leggings"
+          ]
+        }
+      }
+    },
+    "dye_tunic": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "block": {
+            "blocks": [
+              "bedrock_features:dye_cauldron"
+            ]
+          }
+        },
+        "item": {
+          "items": [
+            "minecraft:leather_chestplate"
+          ]
+        }
+      }
+    },
+    "dye_cap": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "block": {
+            "blocks": [
+              "bedrock_features:dye_cauldron"
+            ]
+          }
+        },
+        "item": {
+          "items": [
+            "minecraft:leather_helmet"
+          ]
+        }
+      }
+    }
+  }
+}
