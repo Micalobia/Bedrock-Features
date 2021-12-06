@@ -49,10 +49,14 @@ public abstract class BFBlockEntity extends BlockEntity {
 	}
 
 	public final void remesh() {
+		remesh(false);
+	}
+
+	public final void remesh(boolean important) {
 		Preconditions.checkNotNull(world);
 		if(!world.isClient)
 			throw new IllegalStateException("Cannot call remesh() on the server!");
-		world.updateListeners(pos, null, null, 0);
+		world.updateListeners(pos, null, null, important ? 8 : 0);
 	}
 
 	public final void sync() {
