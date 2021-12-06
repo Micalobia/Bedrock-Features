@@ -1,4 +1,4 @@
-package dev.micalobia.bedrock_features.block;
+package dev.micalobia.bedrock_features.stat;
 
 import dev.micalobia.bedrock_features.BedrockFeatures;
 import net.minecraft.stat.StatFormatter;

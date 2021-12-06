@@ -1,6 +1,7 @@
 package dev.micalobia.bedrock_features.block;
 
 import dev.micalobia.bedrock_features.block.entity.DyeCauldronBlockEntity;
+import dev.micalobia.bedrock_features.stat.BFStats;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
