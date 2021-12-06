@@ -10,9 +10,11 @@ import net.minecraft.util.registry.Registry;
 
 public class BFBlockEntities {
 	public static BlockEntityType<DyeCauldronBlockEntity> DYE_CAULDRON;
+	public static BlockEntityType<PotionCauldronBlockEntity> POTION_CAULDRON;
 
 	public static void init() {
 		DYE_CAULDRON = register(BFBlocks.DYE_CAULDRON);
+		POTION_CAULDRON = register(BFBlocks.POTION_CAULDRON);
 	}
 
 	@SuppressWarnings("unchecked")

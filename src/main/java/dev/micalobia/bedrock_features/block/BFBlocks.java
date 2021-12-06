@@ -11,15 +11,19 @@ import net.minecraft.util.registry.Registry;
 
 public class BFBlocks {
 	public static DyeCauldronBlock DYE_CAULDRON;
+	public static PotionCauldronBlock POTION_CAULDRON;
 
 	public static void init() {
 		DyeCauldronBlock.Behaviors.register();
 		DYE_CAULDRON = register("dye_cauldron", new DyeCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)));
+		PotionCauldronBlock.Behaviors.register();
+		POTION_CAULDRON = register("potion_cauldron", new PotionCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)));
 	}
 
 	@Environment(EnvType.CLIENT)
 	public static void clientInit() {
 		ColorProviderRegistry.BLOCK.register(DyeCauldronBlock::colorProvider, DYE_CAULDRON);
+		ColorProviderRegistry.BLOCK.register(PotionCauldronBlock::colorProvider, POTION_CAULDRON);
 	}
 
 	public static <T extends Block> T register(String name, T block) {
