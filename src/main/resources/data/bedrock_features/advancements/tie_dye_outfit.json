@@ -2,7 +2,7 @@
   "parent": "bedrock_features:root",
   "display": {
     "icon": {
-      "item": "minecraft:bedrock"
+      "item": "minecraft:cauldron"
     },
     "title": {
       "translate": "advancements.bedrock.tie_dye_outfit.title"
