@@ -224,6 +224,9 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 			MAP.put(Items.POTION, Behaviors::addPotionToPotion);
 			MAP.put(Items.GLASS_BOTTLE, Behaviors::takePotion);
 			MAP.put(Items.ARROW, Behaviors::tipArrows);
+			MAP.put(Items.WATER_BUCKET, CauldronBehavior.FILL_WITH_WATER);
+			MAP.put(Items.LAVA_BUCKET, CauldronBehavior.FILL_WITH_LAVA);
+			MAP.put(Items.POWDER_SNOW_BUCKET, CauldronBehavior.FILL_WITH_POWDER_SNOW);
 			// NOTE: This overrides vanilla behavior!
 			CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(Items.POTION, Behaviors::addPotionToEmpty);
 		}

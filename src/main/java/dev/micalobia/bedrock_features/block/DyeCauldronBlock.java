@@ -10,10 +10,7 @@ import net.minecraft.block.LeveledCauldronBlock;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.DyeItem;
-import net.minecraft.item.DyeableItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -76,6 +73,9 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 		public static void register() {
 			for(var item : Registry.ITEM) registerItem(item);
 			RegistryEntryAddedCallback.event(Registry.ITEM).register(((rawId, id, item) -> registerItem(item)));
+			MAP.put(Items.WATER_BUCKET, CauldronBehavior.FILL_WITH_WATER);
+			MAP.put(Items.LAVA_BUCKET, CauldronBehavior.FILL_WITH_LAVA);
+			MAP.put(Items.POWDER_SNOW_BUCKET, CauldronBehavior.FILL_WITH_POWDER_SNOW);
 		}
 
 		private static ActionResult dyeDyableItem(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack) {
