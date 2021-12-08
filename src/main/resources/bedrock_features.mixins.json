@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "enchantment.DamageEnchantmentMixin",
+    "enchantment.ProtectionEnchantmentMixin",
     "entity.mob.CreeperEntityMixin",
     "entity.mob.EntityMixin",
     "entity.mob.ShulkerEntityMixin",

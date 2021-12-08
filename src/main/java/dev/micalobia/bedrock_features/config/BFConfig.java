@@ -24,6 +24,7 @@ public class BFConfig implements ConfigData {
 	public boolean isSharpnessBuffed = true;
 	public boolean areShulkersDyeable = true;
 	public boolean areShulkersDyeableInSurvival = false;
+	public boolean doesMagicBypassProtection = false;
 	public int chargedCreeperHeadLimit = -1;
 
 	private BFConfig() {
