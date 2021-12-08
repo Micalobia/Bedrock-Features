@@ -7,5 +7,11 @@
   "advancements.bedrock.root.title": "Bedrock",
   "advancements.bedrock.root.description": "All you could want from Bedrock Edition",
   "advancements.bedrock.tie_dye_outfit.title": "Tie Dye Outfit",
-  "advancements.bedrock.tie_dye_outfit.description": "Use a cauldron to dye all 4 unique pieces of leather armor"
+  "advancements.bedrock.tie_dye_outfit.description": "Use a cauldron to dye all 4 unique pieces of leather armor",
+  "text.autoconfig.bedrock_features.title": "Bedrock Features",
+  "text.autoconfig.bedrock_features.option.areDyeCauldronsEnabled": "Allow Dye Cauldrons",
+  "text.autoconfig.bedrock_features.option.arePotionCauldronsEnabled": "Allow Potion Cauldrons",
+  "text.autoconfig.bedrock_features.option.areCakesStackable": "Make Cakes Stackable",
+  "text.autoconfig.bedrock_features.option.arePufferfishBuffed": "Buff Pufferfish",
+  "text.autoconfig.bedrock_features.option.chargedCreeperHeadLimit": "Limit to Heads dropped by Charged Creepers"
 }

@@ -1,6 +1,7 @@
 package dev.micalobia.bedrock_features.block;
 
 import dev.micalobia.bedrock_features.block.entity.PotionCauldronBlockEntity;
+import dev.micalobia.bedrock_features.config.BFConfig;
 import dev.micalobia.bedrock_features.stat.BFStats;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
@@ -104,9 +105,26 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 
 	public static class Behaviors {
 		public static final Map<Item, CauldronBehavior> MAP;
+		private static boolean enabled;
 
 		static {
 			MAP = CauldronBehavior.createMap();
+		}
+
+		public static void init() {
+			BFConfig.CHANGED.register(Behaviors::onConfigChanged);
+			MAP.put(Items.POTION, Behaviors::addPotionToPotion);
+			MAP.put(Items.GLASS_BOTTLE, Behaviors::takePotion);
+			MAP.put(Items.ARROW, Behaviors::tipArrows);
+			MAP.put(Items.WATER_BUCKET, CauldronBehavior.FILL_WITH_WATER);
+			MAP.put(Items.LAVA_BUCKET, CauldronBehavior.FILL_WITH_LAVA);
+			MAP.put(Items.POWDER_SNOW_BUCKET, CauldronBehavior.FILL_WITH_POWDER_SNOW);
+			// NOTE: This overrides vanilla behavior!
+			CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(Items.POTION, Behaviors::addPotionToEmpty);
+		}
+
+		private static void onConfigChanged(BFConfig config) {
+			enabled = config.arePotionCauldronsEnabled;
 		}
 
 		private static ActionResult addPotionToPotion(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack) {
@@ -142,12 +160,11 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 			Potion potion = PotionUtil.getPotion(stack);
 			if(!world.isClient) {
 				Item item = stack.getItem();
-				player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
-				player.incrementStat(Stats.USE_CAULDRON);
-				player.incrementStat(Stats.USED.getOrCreateStat(item));
 				if(potion == Potions.WATER)
 					world.setBlockState(pos, Blocks.WATER_CAULDRON.getDefaultState());
 				else {
+					if(!enabled)
+						return ActionResult.PASS;
 					BlockState newState = BFBlocks.POTION_CAULDRON.getDefaultState();
 					world.setBlockState(pos, newState);
 					PotionCauldronBlockEntity entity = Objects.requireNonNull((PotionCauldronBlockEntity) world.getBlockEntity(pos));
@@ -159,6 +176,9 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 						entity.removeCustomColor();
 					entity.sync();
 				}
+				player.setStackInHand(hand, ItemUsage.exchangeStack(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
+				player.incrementStat(Stats.USE_CAULDRON);
+				player.incrementStat(Stats.USED.getOrCreateStat(item));
 				world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				world.emitGameEvent(null, GameEvent.FLUID_PLACE, pos);
 			}
@@ -218,17 +238,6 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 
 		private static boolean hasCustomColor(ItemStack stack) {
 			return Objects.requireNonNull(stack.getNbt()).contains(PotionUtil.CUSTOM_POTION_COLOR_KEY);
-		}
-
-		public static void register() {
-			MAP.put(Items.POTION, Behaviors::addPotionToPotion);
-			MAP.put(Items.GLASS_BOTTLE, Behaviors::takePotion);
-			MAP.put(Items.ARROW, Behaviors::tipArrows);
-			MAP.put(Items.WATER_BUCKET, CauldronBehavior.FILL_WITH_WATER);
-			MAP.put(Items.LAVA_BUCKET, CauldronBehavior.FILL_WITH_LAVA);
-			MAP.put(Items.POWDER_SNOW_BUCKET, CauldronBehavior.FILL_WITH_POWDER_SNOW);
-			// NOTE: This overrides vanilla behavior!
-			CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(Items.POTION, Behaviors::addPotionToEmpty);
 		}
 	}
 }

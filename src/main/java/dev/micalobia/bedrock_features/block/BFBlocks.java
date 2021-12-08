@@ -14,9 +14,9 @@ public class BFBlocks {
 	public static PotionCauldronBlock POTION_CAULDRON;
 
 	public static void init() {
-		DyeCauldronBlock.Behaviors.register();
+		DyeCauldronBlock.Behaviors.init();
 		DYE_CAULDRON = register("dye_cauldron", new DyeCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)));
-		PotionCauldronBlock.Behaviors.register();
+		PotionCauldronBlock.Behaviors.init();
 		POTION_CAULDRON = register("potion_cauldron", new PotionCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)));
 	}
 

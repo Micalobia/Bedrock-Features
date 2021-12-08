@@ -22,6 +22,9 @@
     ],
     "client": [
       "dev.micalobia.bedrock_features.BedrockFeaturesClient"
+    ],
+    "modmenu": [
+      "dev.micalobia.bedrock_features.config.BFModMenu"
     ]
   },
   "mixins": [
@@ -32,8 +35,10 @@
     "fabricloader": ">=0.11.3",
     "fabric": "*",
     "minecraft": "1.18.x",
-    "java": ">=17"
+    "java": ">=17",
+    "cloth-config2": "6.0.x"
   },
   "suggests": {
+    "modmenu": "3.0.x"
   }
 }

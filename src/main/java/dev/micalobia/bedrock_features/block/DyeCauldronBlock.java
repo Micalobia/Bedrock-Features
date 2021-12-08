@@ -1,6 +1,7 @@
 package dev.micalobia.bedrock_features.block;
 
 import dev.micalobia.bedrock_features.block.entity.DyeCauldronBlockEntity;
+import dev.micalobia.bedrock_features.config.BFConfig;
 import dev.micalobia.bedrock_features.stat.BFStats;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.block.BlockEntityProvider;
@@ -57,6 +58,7 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 
 	public static class Behaviors {
 		public static final Map<Item, CauldronBehavior> MAP;
+		private static boolean enabled;
 
 		static {
 			MAP = CauldronBehavior.createMap();
@@ -70,12 +72,17 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 			}
 		}
 
-		public static void register() {
+		public static void init() {
+			BFConfig.CHANGED.register(Behaviors::onConfigChanged);
 			for(var item : Registry.ITEM) registerItem(item);
 			RegistryEntryAddedCallback.event(Registry.ITEM).register(((rawId, id, item) -> registerItem(item)));
 			MAP.put(Items.WATER_BUCKET, CauldronBehavior.FILL_WITH_WATER);
 			MAP.put(Items.LAVA_BUCKET, CauldronBehavior.FILL_WITH_LAVA);
 			MAP.put(Items.POWDER_SNOW_BUCKET, CauldronBehavior.FILL_WITH_POWDER_SNOW);
+		}
+
+		private static void onConfigChanged(BFConfig config) {
+			enabled = config.areDyeCauldronsEnabled;
 		}
 
 		private static ActionResult dyeDyableItem(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack) {
@@ -94,6 +101,8 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 		}
 
 		private static ActionResult dyeWater(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack) {
+			if(!enabled)
+				return ActionResult.PASS;
 			Item item = stack.getItem();
 			if(!(item instanceof DyeItem dyeItem))
 				return ActionResult.PASS;
