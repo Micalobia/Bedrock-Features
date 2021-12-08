@@ -15,7 +15,7 @@
   "text.autoconfig.bedrock_features.option.arePufferfishBuffed": "Buff Pufferfish",
   "text.autoconfig.bedrock_features.option.chargedCreeperHeadLimit": "Limit to Heads dropped by Charged Creepers",
   "text.autoconfig.bedrock_features.option.isSharpnessBuffed": "Is Sharpness Buffed",
-  "text.autoconfig.bedrock_features.areShulkersDyeable": "Are Shulkers Dyeable",
-  "text.autoconfig.bedrock_features.areShulkersDyeableInSurvival": "Are Shulkers Dyeable in Survival",
-  "text.autoconfig.bedrock_features.doesMagicBypassProtection": "Does Magic Bypass Protection"
+  "text.autoconfig.bedrock_features.option.areShulkersDyeable": "Are Shulkers Dyeable",
+  "text.autoconfig.bedrock_features.option.areShulkersDyeableInSurvival": "Are Shulkers Dyeable in Survival",
+  "text.autoconfig.bedrock_features.option.doesMagicBypassProtection": "Does Magic Bypass Protection"
 }
