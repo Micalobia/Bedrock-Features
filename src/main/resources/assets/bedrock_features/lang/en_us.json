@@ -13,5 +13,6 @@
   "text.autoconfig.bedrock_features.option.arePotionCauldronsEnabled": "Allow Potion Cauldrons",
   "text.autoconfig.bedrock_features.option.areCakesStackable": "Make Cakes Stackable",
   "text.autoconfig.bedrock_features.option.arePufferfishBuffed": "Buff Pufferfish",
-  "text.autoconfig.bedrock_features.option.chargedCreeperHeadLimit": "Limit to Heads dropped by Charged Creepers"
+  "text.autoconfig.bedrock_features.option.chargedCreeperHeadLimit": "Limit to Heads dropped by Charged Creepers",
+  "text.autoconfig.bedrock_features.option.isSharpnessBuffed": "Is Sharpness Buffed"
 }

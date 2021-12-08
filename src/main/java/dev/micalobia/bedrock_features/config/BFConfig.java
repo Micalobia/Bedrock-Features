@@ -21,6 +21,7 @@ public class BFConfig implements ConfigData {
 	public boolean arePotionCauldronsEnabled = true;
 	public boolean areCakesStackable = true;
 	public boolean arePufferfishBuffed = true;
+	public boolean isSharpnessBuffed = true;
 	public int chargedCreeperHeadLimit = -1;
 
 	private BFConfig() {
