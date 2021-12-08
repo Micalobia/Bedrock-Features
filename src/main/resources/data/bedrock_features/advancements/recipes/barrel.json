@@ -1,0 +1,55 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bedrock_features:barrel_c_wood_sticks",
+      "bedrock_features:barrel_c_wooden_rods"
+    ]
+  },
+  "criteria": {
+    "has_wood_stick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:wood_sticks"
+          }
+        ]
+      }
+    },
+    "has_wooden_rod": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:wooden_rods"
+          }
+        ]
+      }
+    },
+    "has_wood_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:wooden_slabs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:barrel"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wood_stick",
+      "has_wooden_rod",
+      "has_wood_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "barrel",
+  "pattern": [
+    "I-I",
+    "I I",
+    "I-I"
+  ],
+  "key": {
+    "I": {
+      "tag": "c:wooden_rods"
+    },
+    "-": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "result": {
+    "item": "minecraft:barrel",
+    "count": 1
+  }
+}
