@@ -6,6 +6,8 @@
   "mixins": [
     "enchantment.DamageEnchantmentMixin",
     "entity.mob.CreeperEntityMixin",
+    "entity.mob.EntityMixin",
+    "entity.mob.ShulkerEntityMixin",
     "item.FoodComponentAccessor",
     "item.ItemAccessor"
   ],
