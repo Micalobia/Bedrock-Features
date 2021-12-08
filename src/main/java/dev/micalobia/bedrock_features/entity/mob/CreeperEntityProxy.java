@@ -1,6 +1,6 @@
 package dev.micalobia.bedrock_features.entity.mob;
 
-public class CreeperEntityExtension {
+public class CreeperEntityProxy {
 	private static int headsDroppedLimit = -1;
 
 	public static int getHeadsDroppedLimit() {
@@ -8,6 +8,6 @@ public class CreeperEntityExtension {
 	}
 
 	public static void setHeadsDroppedLimit(int headsDroppedLimit) {
-		CreeperEntityExtension.headsDroppedLimit = headsDroppedLimit;
+		CreeperEntityProxy.headsDroppedLimit = headsDroppedLimit;
 	}
 }

@@ -1,4 +1,4 @@
-package dev.micalobia.bedrock_features.mixin.entity.mob;
+package dev.micalobia.bedrock_features.mixin.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.data.DataTracker;

@@ -1,8 +1,8 @@
 package dev.micalobia.bedrock_features.entity;
 
 import dev.micalobia.bedrock_features.config.BFConfig;
-import dev.micalobia.bedrock_features.entity.mob.CreeperEntityExtension;
-import dev.micalobia.bedrock_features.entity.mob.ShulkerEntityExtension;
+import dev.micalobia.bedrock_features.entity.mob.CreeperEntityProxy;
+import dev.micalobia.bedrock_features.entity.mob.ShulkerEntityProxy;
 
 public class BFEntities {
 	public static void init() {
@@ -10,8 +10,8 @@ public class BFEntities {
 	}
 
 	private static void onConfigChange(BFConfig config) {
-		CreeperEntityExtension.setHeadsDroppedLimit(config.chargedCreeperHeadLimit);
-		ShulkerEntityExtension.setShulkersDyeable(config.areShulkersDyeable);
-		ShulkerEntityExtension.setSurvivalDyeAllowed(config.areShulkersDyeableInSurvival);
+		CreeperEntityProxy.setHeadsDroppedLimit(config.chargedCreeperHeadLimit);
+		ShulkerEntityProxy.setShulkersDyeable(config.areShulkersDyeable);
+		ShulkerEntityProxy.setSurvivalDyeAllowed(config.areShulkersDyeableInSurvival);
 	}
 }

@@ -1,6 +1,6 @@
 package dev.micalobia.bedrock_features.enchantment;
 
-public class DamageEnchantmentExtension {
+public class DamageEnchantmentProxy {
 	private static boolean sharpnessBuffed;
 
 	public static boolean isSharpnessBuffed() {
@@ -8,6 +8,6 @@ public class DamageEnchantmentExtension {
 	}
 
 	public static void setSharpnessBuffed(boolean sharpnessBuffed) {
-		DamageEnchantmentExtension.sharpnessBuffed = sharpnessBuffed;
+		DamageEnchantmentProxy.sharpnessBuffed = sharpnessBuffed;
 	}
 }

@@ -7,7 +7,7 @@
     "enchantment.DamageEnchantmentMixin",
     "enchantment.ProtectionEnchantmentMixin",
     "entity.mob.CreeperEntityMixin",
-    "entity.mob.EntityMixin",
+    "entity.EntityMixin",
     "entity.mob.ShulkerEntityMixin",
     "item.FoodComponentAccessor",
     "item.ItemAccessor"

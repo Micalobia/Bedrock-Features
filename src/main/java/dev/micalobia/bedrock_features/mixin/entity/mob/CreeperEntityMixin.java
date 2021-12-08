@@ -1,6 +1,6 @@
 package dev.micalobia.bedrock_features.mixin.entity.mob;
 
-import dev.micalobia.bedrock_features.entity.mob.CreeperEntityExtension;
+import dev.micalobia.bedrock_features.entity.mob.CreeperEntityProxy;
 import net.minecraft.entity.mob.CreeperEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -18,7 +18,7 @@ public abstract class CreeperEntityMixin {
 
 	@Inject(method = "shouldDropHead", at = @At("HEAD"), cancellable = true)
 	public void increaseHeadLimitToInfinity(CallbackInfoReturnable<Boolean> cir) {
-		boolean isUnderLimit = CreeperEntityExtension.getHeadsDroppedLimit() < 0 || this.headsDropped < CreeperEntityExtension.getHeadsDroppedLimit();
+		boolean isUnderLimit = CreeperEntityProxy.getHeadsDroppedLimit() < 0 || this.headsDropped < CreeperEntityProxy.getHeadsDroppedLimit();
 		cir.setReturnValue(this.shouldRenderOverlay() && isUnderLimit);
 	}
 }

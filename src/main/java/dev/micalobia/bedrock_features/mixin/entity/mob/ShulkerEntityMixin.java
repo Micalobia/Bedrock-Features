@@ -1,6 +1,7 @@
 package dev.micalobia.bedrock_features.mixin.entity.mob;
 
-import dev.micalobia.bedrock_features.entity.mob.ShulkerEntityExtension;
+import dev.micalobia.bedrock_features.entity.mob.ShulkerEntityProxy;
+import dev.micalobia.bedrock_features.mixin.entity.EntityMixin;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.mob.ShulkerEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,8 +23,8 @@ public abstract class ShulkerEntityMixin extends EntityMixin {
 
 	@Override
 	public void changeInteraction(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-		if(!ShulkerEntityExtension.areShulkersDyeable()) return;
-		if(!ShulkerEntityExtension.isSurvivalDyeAllowed() && !player.getAbilities().creativeMode) return;
+		if(!ShulkerEntityProxy.areShulkersDyeable()) return;
+		if(!ShulkerEntityProxy.isSurvivalDyeAllowed() && !player.getAbilities().creativeMode) return;
 		ItemStack handStack = player.getStackInHand(hand);
 		Item item = handStack.getItem();
 		if(!(item instanceof DyeItem dyeItem)) return;

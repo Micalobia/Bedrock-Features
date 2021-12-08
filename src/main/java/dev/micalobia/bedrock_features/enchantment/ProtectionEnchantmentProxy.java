@@ -1,6 +1,6 @@
 package dev.micalobia.bedrock_features.enchantment;
 
-public class ProtectionEnchantmentExtension {
+public class ProtectionEnchantmentProxy {
 	private static boolean doesMagicBypass;
 
 	public static boolean doesMagicBypass() {
@@ -8,6 +8,6 @@ public class ProtectionEnchantmentExtension {
 	}
 
 	public static void setMagicBypass(boolean doesMagicBypass) {
-		ProtectionEnchantmentExtension.doesMagicBypass = doesMagicBypass;
+		ProtectionEnchantmentProxy.doesMagicBypass = doesMagicBypass;
 	}
 }

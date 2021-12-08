@@ -1,6 +1,6 @@
 package dev.micalobia.bedrock_features.entity.mob;
 
-public class ShulkerEntityExtension {
+public class ShulkerEntityProxy {
 	private static boolean areShulkersDyeable;
 	private static boolean survivalDyeAllowed;
 
@@ -10,7 +10,7 @@ public class ShulkerEntityExtension {
 	}
 
 	public static void setShulkersDyeable(boolean areShulkersDyeable) {
-		ShulkerEntityExtension.areShulkersDyeable = areShulkersDyeable;
+		ShulkerEntityProxy.areShulkersDyeable = areShulkersDyeable;
 	}
 
 	public static boolean isSurvivalDyeAllowed() {
@@ -18,6 +18,6 @@ public class ShulkerEntityExtension {
 	}
 
 	public static void setSurvivalDyeAllowed(boolean survivalDyeAllowed) {
-		ShulkerEntityExtension.survivalDyeAllowed = survivalDyeAllowed;
+		ShulkerEntityProxy.survivalDyeAllowed = survivalDyeAllowed;
 	}
 }
