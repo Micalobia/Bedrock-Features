@@ -17,5 +17,6 @@
   "text.autoconfig.bedrock_features.option.isSharpnessBuffed": "Is Sharpness Buffed",
   "text.autoconfig.bedrock_features.option.areShulkersDyeable": "Are Shulkers Dyeable",
   "text.autoconfig.bedrock_features.option.areShulkersDyeableInSurvival": "Are Shulkers Dyeable in Survival",
+  "text.autoconfig.bedrock_features.option.isSugarcaneBonemealable": "Is Sugarcane Bonemeal-able",
   "text.autoconfig.bedrock_features.option.doesMagicBypassProtection": "Does Magic Bypass Protection"
 }

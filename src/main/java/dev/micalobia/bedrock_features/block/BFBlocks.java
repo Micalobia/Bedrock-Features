@@ -1,6 +1,7 @@
 package dev.micalobia.bedrock_features.block;
 
 import dev.micalobia.bedrock_features.BedrockFeatures;
+import dev.micalobia.bedrock_features.config.BFConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -18,6 +19,11 @@ public class BFBlocks {
 		DYE_CAULDRON = register("dye_cauldron", new DyeCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)));
 		PotionCauldronBlock.Behaviors.init();
 		POTION_CAULDRON = register("potion_cauldron", new PotionCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)));
+		BFConfig.CHANGED.register(BFBlocks::onConfigChanged);
+	}
+
+	private static void onConfigChanged(BFConfig config) {
+		SugarCaneBlockProxy.setCanBeBonemealed(config.isSugarcaneBonemealable);
 	}
 
 	@Environment(EnvType.CLIENT)
