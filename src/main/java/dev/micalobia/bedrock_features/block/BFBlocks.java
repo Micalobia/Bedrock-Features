@@ -24,6 +24,7 @@ public class BFBlocks {
 
 	private static void onConfigChanged(BFConfig config) {
 		SugarCaneBlockProxy.setCanBeBonemealed(config.isSugarcaneBonemealable);
+		AnvilBlockProxy.setPushable(config.areAnvilsPushable);
 	}
 
 	@Environment(EnvType.CLIENT)

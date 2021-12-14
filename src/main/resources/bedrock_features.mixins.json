@@ -4,6 +4,8 @@
   "package": "dev.micalobia.bedrock_features.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "block.AbstractBlockMixin",
+    "block.AnvilBlockMixin",
     "block.SugarCaneBlockMixin",
     "enchantment.DamageEnchantmentMixin",
     "enchantment.ProtectionEnchantmentMixin",
