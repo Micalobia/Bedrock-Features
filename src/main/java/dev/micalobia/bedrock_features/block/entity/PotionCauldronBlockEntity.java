@@ -1,5 +1,6 @@
 package dev.micalobia.bedrock_features.block.entity;
 
+import dev.micalobia.micalibria.block.entity.MBlockEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
@@ -15,7 +16,7 @@ import net.minecraft.util.registry.Registry;
 import java.util.Collection;
 import java.util.List;
 
-public class PotionCauldronBlockEntity extends BFBlockEntity {
+public class PotionCauldronBlockEntity extends MBlockEntity {
 	protected Potion potion;
 	protected List<StatusEffectInstance> customEffects;
 	protected int customColor;

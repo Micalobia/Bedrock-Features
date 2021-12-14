@@ -1,11 +1,12 @@
 package dev.micalobia.bedrock_features.block.entity;
 
-import dev.micalobia.bedrock_features.util.Dyeable;
+import dev.micalobia.micalibria.block.entity.MBlockEntity;
+import dev.micalobia.micalibria.util.Dyeable;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 
-public class DyeCauldronBlockEntity extends BFBlockEntity implements Dyeable {
+public class DyeCauldronBlockEntity extends MBlockEntity implements Dyeable {
 	int color;
 
 	public DyeCauldronBlockEntity(BlockPos pos, BlockState state) {

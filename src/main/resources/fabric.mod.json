@@ -36,7 +36,8 @@
     "fabric": "*",
     "minecraft": "1.18.x",
     "java": ">=17",
-    "cloth-config2": "6.0.x"
+    "cloth-config2": "6.0.x",
+    "micalibria": ">=2.0.0"
   },
   "suggests": {
     "modmenu": "3.0.x"
