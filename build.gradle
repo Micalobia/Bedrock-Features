@@ -40,7 +40,7 @@ dependencies {
 	modImplementation "com.github.Micalobia:Micalibria:v${project.micalibria_version}"
 	include "com.github.Micalobia:Micalibria:v${project.micalibria_version}"
 	modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
-	modRuntime "com.terraformersmc:modmenu:${project.modmenu_version}"
+	modRuntimeOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
 processResources {
