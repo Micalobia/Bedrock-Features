@@ -27,6 +27,8 @@ public class BFConfig implements ConfigData {
 	public boolean doesMagicBypassProtection = false;
 	public boolean isSugarcaneBonemealable = true;
 	public boolean areAnvilsPushable = true;
+	public boolean jukeboxEmitRedstoneWhenPlaying = true;
+	public boolean jukeboxCanBeUsedWithHopper = true;
 	public int chargedCreeperHeadLimit = -1;
 
 	private BFConfig() {
