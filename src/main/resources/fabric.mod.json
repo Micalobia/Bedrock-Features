@@ -32,7 +32,7 @@
     "fabric": "*",
     "minecraft": "1.18.x",
     "java": ">=17",
-    "cloth-config2": "6.0.x",
+    "cloth-config2": ">=6.0.45",
     "micalibria": ">=2.0.0"
   },
   "suggests": {
