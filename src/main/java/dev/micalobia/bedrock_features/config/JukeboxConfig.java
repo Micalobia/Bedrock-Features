@@ -21,6 +21,7 @@ public class JukeboxConfig {
 
 	public static void init() {
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new Listener());
+
 	}
 
 	public static int getTickCount(ItemStack record) {

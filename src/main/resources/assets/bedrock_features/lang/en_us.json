@@ -20,6 +20,5 @@
   "text.autoconfig.bedrock_features.option.isSugarcaneBonemealable": "Is Sugarcane Bonemeal-able",
   "text.autoconfig.bedrock_features.option.areAnvilsPushable": "Are Anvils Pushable",
   "text.autoconfig.bedrock_features.option.doesMagicBypassProtection": "Does Magic Bypass Protection",
-  "text.autoconfig.bedrock_features.option.jukeboxEmitRedstoneWhenPlaying": "Do Jukeboxes Emit Redstone When Playing",
-  "text.autoconfig.bedrock_features.option.jukeboxCanBeUsedWithHopper": "Can Jukeboxes Be Used With A Hopper"
+  "text.autoconfig.bedrock_features.option.jukeboxEmitRedstoneWhenPlaying": "Do Jukeboxes Emit Redstone When Playing"
 }

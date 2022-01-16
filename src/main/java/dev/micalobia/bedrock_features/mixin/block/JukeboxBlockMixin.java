@@ -66,12 +66,11 @@ public abstract class JukeboxBlockMixin extends AbstractBlockMixin implements Bl
 
 	@Override
 	public Optional<Boolean> Bedrock$changeEmitsRedstonePower(BlockState state) {
-		if(!JukeboxBlockProxy.getEmitsRedstone()) return super.Bedrock$changeEmitsRedstonePower(state);
-		else return Optional.of(true);
+		return Optional.of(JukeboxBlockProxy.getEmitsRedstone());
 	}
 
 	@Override
 	public Optional<Integer> Bedrock$changeWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-		return Optional.of(state.get(Properties.POWERED) ? 15 : 0);
+		return Optional.of(JukeboxBlockProxy.getEmitsRedstone() && state.get(Properties.POWERED) ? 15 : 0);
 	}
 }
