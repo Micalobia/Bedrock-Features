@@ -11,10 +11,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(CreeperEntity.class)
 public abstract class CreeperEntityMixin {
 	@Shadow
-	public abstract boolean shouldRenderOverlay();
+	private int headsDropped;
 
 	@Shadow
-	private int headsDropped;
+	public abstract boolean shouldRenderOverlay();
 
 	@Inject(method = "shouldDropHead", at = @At("HEAD"), cancellable = true)
 	public void increaseHeadLimitToInfinity(CallbackInfoReturnable<Boolean> cir) {

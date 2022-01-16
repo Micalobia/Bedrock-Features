@@ -6,7 +6,9 @@
   "mixins": [
     "block.AbstractBlockMixin",
     "block.AnvilBlockMixin",
+    "block.JukeboxBlockMixin",
     "block.SugarCaneBlockMixin",
+    "block.entity.JukeboxBlockEntityMixin",
     "enchantment.DamageEnchantmentMixin",
     "enchantment.ProtectionEnchantmentMixin",
     "entity.EntityMixin",
