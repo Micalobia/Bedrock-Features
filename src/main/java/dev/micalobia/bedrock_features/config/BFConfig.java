@@ -18,7 +18,9 @@ public class BFConfig implements ConfigData {
 				for(var listener : listeners) listener.changed(bfConfig);
 			});
 	public boolean areDyeCauldronsEnabled = true;
+	public boolean doDyeCauldronsObeyPrecipitation = false;
 	public boolean arePotionCauldronsEnabled = true;
+	public boolean doPotionCauldronsObeyPrecipitation = false;
 	public boolean areCakesStackable = true;
 	public boolean arePufferfishBuffed = true;
 	public boolean isSharpnessBuffed = true;

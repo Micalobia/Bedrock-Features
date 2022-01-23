@@ -36,6 +36,8 @@ public class BFBlocks {
 		SugarCaneBlockProxy.setCanBeBonemealed(config.isSugarcaneBonemealable);
 		AnvilBlockProxy.setPushable(config.areAnvilsPushable);
 		JukeboxBlockProxy.setEmitsRedstone(config.jukeboxEmitRedstoneWhenPlaying);
+		DyeCauldronBlock.obeysPrecipitation = config.doDyeCauldronsObeyPrecipitation;
+		PotionCauldronBlock.obeysPrecipitation = config.doPotionCauldronsObeyPrecipitation;
 	}
 
 	@Environment(EnvType.CLIENT)

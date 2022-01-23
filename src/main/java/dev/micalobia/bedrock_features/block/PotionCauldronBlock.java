@@ -21,7 +21,6 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -40,8 +39,10 @@ import java.util.Objects;
 import java.util.Random;
 
 public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEntityProvider {
+	public static boolean obeysPrecipitation;
+
 	public PotionCauldronBlock(Settings settings) {
-		super(settings, null, Behaviors.MAP);
+		super(settings, RAIN_PREDICATE, Behaviors.MAP);
 	}
 
 	public static int colorProvider(BlockState state, BlockView view, BlockPos pos, int tintIndex) {
@@ -67,6 +68,11 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 	}
 
 	@Override
+	protected boolean canBeFilledByDripstone(Fluid fluid) {
+		return obeysPrecipitation && super.canBeFilledByDripstone(fluid);
+	}
+
+	@Override
 	public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
 	}
 
@@ -76,14 +82,8 @@ public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEn
 
 	@Override
 	public void precipitationTick(BlockState state, World world, BlockPos pos, Precipitation precipitation) {
-	}
-
-	@Override
-	protected void fillFromDripstone(BlockState state, World world, BlockPos pos, Fluid fluid) {
-	}
-
-	@Override
-	public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+		if(!obeysPrecipitation) return;
+		super.precipitationTick(state, world, pos, precipitation);
 	}
 
 	@Override

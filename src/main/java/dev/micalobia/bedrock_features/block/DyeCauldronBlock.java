@@ -11,6 +11,7 @@ import net.minecraft.block.LeveledCauldronBlock;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -22,6 +23,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome.Precipitation;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,8 +31,10 @@ import java.util.Map;
 import java.util.Objects;
 
 public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntityProvider {
+	public static boolean obeysPrecipitation;
+
 	public DyeCauldronBlock(Settings settings) {
-		super(settings, null, Behaviors.MAP);
+		super(settings, RAIN_PREDICATE, Behaviors.MAP);
 	}
 
 	public static int colorProvider(BlockState state, BlockView view, BlockPos pos, int tintIndex) {
@@ -54,6 +58,17 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 	@Override
 	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
 		return new DyeCauldronBlockEntity(pos, state);
+	}
+
+	@Override
+	protected boolean canBeFilledByDripstone(Fluid fluid) {
+		return obeysPrecipitation && super.canBeFilledByDripstone(fluid);
+	}
+
+	@Override
+	public void precipitationTick(BlockState state, World world, BlockPos pos, Precipitation precipitation) {
+		if(!obeysPrecipitation) return;
+		super.precipitationTick(state, world, pos, precipitation);
 	}
 
 	public static class Behaviors {
