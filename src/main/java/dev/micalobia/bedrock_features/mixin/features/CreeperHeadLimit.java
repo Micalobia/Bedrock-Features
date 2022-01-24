@@ -1,4 +1,4 @@
-package dev.micalobia.bedrock_features.mixin.entity.mob;
+package dev.micalobia.bedrock_features.mixin.features;
 
 import dev.micalobia.bedrock_features.entity.BFEntities.Config;
 import net.minecraft.entity.mob.CreeperEntity;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CreeperEntity.class)
-public abstract class CreeperEntityMixin {
+public abstract class CreeperHeadLimit {
 	@Shadow
 	private int headsDropped;
 

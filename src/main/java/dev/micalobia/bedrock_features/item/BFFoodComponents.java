@@ -2,7 +2,7 @@ package dev.micalobia.bedrock_features.item;
 
 import com.mojang.datafixers.util.Pair;
 import dev.micalobia.bedrock_features.config.BFConfig;
-import dev.micalobia.bedrock_features.mixin.item.FoodComponentAccessor;
+import dev.micalobia.bedrock_features.mixin.accessors.FoodComponentAccessor;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;

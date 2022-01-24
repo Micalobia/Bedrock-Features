@@ -1,4 +1,4 @@
-package dev.micalobia.bedrock_features.mixin.block;
+package dev.micalobia.bedrock_features.mixin.features;
 
 import dev.micalobia.bedrock_features.block.BFBlocks.Config;
 import net.minecraft.block.Block;
@@ -17,12 +17,12 @@ import org.spongepowered.asm.mixin.Shadow;
 import java.util.Random;
 
 @Mixin(SugarCaneBlock.class)
-public class SugarCaneBlockMixin extends Block implements Fertilizable {
+public class SugarcaneBonemealable extends Block implements Fertilizable {
 	@Shadow
 	@Final
 	public static IntProperty AGE;
 
-	public SugarCaneBlockMixin(Settings settings) {
+	public SugarcaneBonemealable(Settings settings) {
 		super(settings);
 	}
 

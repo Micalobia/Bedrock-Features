@@ -1,4 +1,4 @@
-package dev.micalobia.bedrock_features.mixin.item;
+package dev.micalobia.bedrock_features.mixin.accessors;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.effect.StatusEffectInstance;
