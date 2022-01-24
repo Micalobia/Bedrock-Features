@@ -1,5 +1,6 @@
 package dev.micalobia.bedrock_features.block;
 
+import dev.micalobia.bedrock_features.block.BFBlocks.Config;
 import dev.micalobia.bedrock_features.block.entity.DyeCauldronBlockEntity;
 import dev.micalobia.bedrock_features.config.BFConfig;
 import dev.micalobia.bedrock_features.stat.BFStats;
@@ -31,8 +32,6 @@ import java.util.Map;
 import java.util.Objects;
 
 public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntityProvider {
-	public static boolean obeysPrecipitation;
-
 	public DyeCauldronBlock(Settings settings) {
 		super(settings, RAIN_PREDICATE, Behaviors.MAP);
 	}
@@ -62,12 +61,12 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 
 	@Override
 	protected boolean canBeFilledByDripstone(Fluid fluid) {
-		return obeysPrecipitation && super.canBeFilledByDripstone(fluid);
+		return Config.dyeCauldronObeysPrecipition && super.canBeFilledByDripstone(fluid);
 	}
 
 	@Override
 	public void precipitationTick(BlockState state, World world, BlockPos pos, Precipitation precipitation) {
-		if(!obeysPrecipitation) return;
+		if(!Config.dyeCauldronObeysPrecipition) return;
 		super.precipitationTick(state, world, pos, precipitation);
 	}
 

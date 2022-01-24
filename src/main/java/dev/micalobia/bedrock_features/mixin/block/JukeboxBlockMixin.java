@@ -1,6 +1,6 @@
 package dev.micalobia.bedrock_features.mixin.block;
 
-import dev.micalobia.bedrock_features.block.JukeboxBlockProxy;
+import dev.micalobia.bedrock_features.block.BFBlocks.Config;
 import dev.micalobia.bedrock_features.block.entity.JukeboxBlockEntityExtension;
 import dev.micalobia.bedrock_features.config.JukeboxConfig;
 import net.minecraft.block.Block;
@@ -66,11 +66,11 @@ public abstract class JukeboxBlockMixin extends AbstractBlockMixin implements Bl
 
 	@Override
 	public Optional<Boolean> Bedrock$changeEmitsRedstonePower(BlockState state) {
-		return Optional.of(JukeboxBlockProxy.getEmitsRedstone());
+		return Optional.of(Config.jukeboxEmitsRedstone);
 	}
 
 	@Override
 	public Optional<Integer> Bedrock$changeWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-		return Optional.of(JukeboxBlockProxy.getEmitsRedstone() && state.get(Properties.POWERED) ? 15 : 0);
+		return Optional.of(Config.jukeboxEmitsRedstone && state.get(Properties.POWERED) ? 15 : 0);
 	}
 }

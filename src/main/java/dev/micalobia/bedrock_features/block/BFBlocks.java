@@ -1,7 +1,6 @@
 package dev.micalobia.bedrock_features.block;
 
 import dev.micalobia.bedrock_features.BedrockFeatures;
-import dev.micalobia.bedrock_features.block.JukeboxBlockProxy.JukeboxStorage;
 import dev.micalobia.bedrock_features.config.BFConfig;
 import dev.micalobia.bedrock_features.config.JukeboxConfig;
 import dev.micalobia.bedrock_features.state.property.BedrockProperties;
@@ -22,6 +21,7 @@ public class BFBlocks {
 	public static DyeCauldronBlock DYE_CAULDRON;
 	public static PotionCauldronBlock POTION_CAULDRON;
 
+	@SuppressWarnings("UnstableApiUsage")
 	public static void init() {
 		DyeCauldronBlock.Behaviors.init();
 		DYE_CAULDRON = register("dye_cauldron", new DyeCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)));
@@ -31,17 +31,16 @@ public class BFBlocks {
 		BlockUtility.injectBlockstateProperty(JukeboxBlock.class, Properties.POWERED, false);
 		BlockUtility.injectBlockstateProperty(BellBlock.class, BedrockProperties.RINGING, false);
 		JukeboxConfig.init();
-		//noinspection UnstableApiUsage
 		ItemStorage.SIDED.registerForBlockEntity(((entity, direction) -> new JukeboxStorage(entity)), BlockEntityType.JUKEBOX);
 	}
 
 	private static void onConfigChanged(BFConfig config) {
-		SugarCaneBlockProxy.setCanBeBonemealed(config.isSugarcaneBonemealable);
-		AnvilBlockProxy.setPushable(config.areAnvilsPushable);
-		JukeboxBlockProxy.setEmitsRedstone(config.jukeboxEmitRedstoneWhenPlaying);
-		DyeCauldronBlock.obeysPrecipitation = config.doDyeCauldronsObeyPrecipitation;
-		PotionCauldronBlock.obeysPrecipitation = config.doPotionCauldronsObeyPrecipitation;
-		BellBlockProxy.canBeObserved = config.bellsCanBeObserved;
+		Config.sugarcaneCanBeBonemealed = config.isSugarcaneBonemealable;
+		Config.anvilCanBePushed = config.areAnvilsPushable;
+		Config.jukeboxEmitsRedstone = config.jukeboxEmitRedstoneWhenPlaying;
+		Config.dyeCauldronObeysPrecipition = config.doDyeCauldronsObeyPrecipitation;
+		Config.potionCauldronObeysPrecipition = config.doPotionCauldronsObeyPrecipitation;
+		Config.bellCanBeObserved = config.bellsCanBeObserved;
 	}
 
 	@Environment(EnvType.CLIENT)
@@ -52,5 +51,17 @@ public class BFBlocks {
 
 	public static <T extends Block> T register(String name, T block) {
 		return BlockUtility.register(BedrockFeatures.id(name), block);
+	}
+
+	public static final class Config {
+		public static boolean sugarcaneCanBeBonemealed;
+		public static boolean anvilCanBePushed;
+		public static boolean jukeboxEmitsRedstone;
+		public static boolean dyeCauldronObeysPrecipition;
+		public static boolean potionCauldronObeysPrecipition;
+		public static boolean bellCanBeObserved;
+
+		private Config() {
+		}
 	}
 }

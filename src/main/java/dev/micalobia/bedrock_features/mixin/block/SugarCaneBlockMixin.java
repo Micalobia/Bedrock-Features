@@ -1,6 +1,6 @@
 package dev.micalobia.bedrock_features.mixin.block;
 
-import dev.micalobia.bedrock_features.block.SugarCaneBlockProxy;
+import dev.micalobia.bedrock_features.block.BFBlocks.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
@@ -28,7 +28,7 @@ public class SugarCaneBlockMixin extends Block implements Fertilizable {
 
 	@Override
 	public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
-		if(!SugarCaneBlockProxy.canBeBonemealed()) return false;
+		if(!Config.sugarcaneCanBeBonemealed) return false;
 		BlockPos top = Bedrock$getTop(world, pos);
 		int height = Bedrock$getHeight(world, top);
 		if(height == 3) return false;

@@ -8,7 +8,15 @@ public class BFEnchantments {
 	}
 
 	private static void onConfigChanged(BFConfig config) {
-		DamageEnchantmentProxy.setSharpnessBuffed(config.isSharpnessBuffed);
-		ProtectionEnchantmentProxy.setMagicBypass(config.doesMagicBypassProtection);
+		Config.sharpnessBuffed = config.isSharpnessBuffed;
+		Config.protectionMagicBypass = config.doesMagicBypassProtection;
+	}
+
+	public static final class Config {
+		public static boolean sharpnessBuffed;
+		public static boolean protectionMagicBypass;
+
+		private Config() {
+		}
 	}
 }

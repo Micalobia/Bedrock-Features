@@ -1,6 +1,6 @@
 package dev.micalobia.bedrock_features.mixin.block;
 
-import dev.micalobia.bedrock_features.block.BellBlockProxy;
+import dev.micalobia.bedrock_features.block.BFBlocks.Config;
 import dev.micalobia.bedrock_features.state.property.BedrockProperties;
 import net.minecraft.block.BellBlock;
 import net.minecraft.block.Block;
@@ -20,7 +20,7 @@ public class BellBlockMixin {
 			at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/BellBlockEntity;activate(Lnet/minecraft/util/math/Direction;)V", ordinal = 0)
 	)
 	public void Bedrock$startRingingState(Entity entity, World world, BlockPos pos, Direction direction, CallbackInfoReturnable<Boolean> cir) {
-		if(!BellBlockProxy.canBeObserved) return;
+		if(!Config.bellCanBeObserved) return;
 		var state = world.getBlockState(pos);
 		world.setBlockState(pos, state.with(BedrockProperties.RINGING, true), Block.NOTIFY_LISTENERS);
 	}
