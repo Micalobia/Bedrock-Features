@@ -6,8 +6,10 @@
   "mixins": [
     "block.AbstractBlockMixin",
     "block.AnvilBlockMixin",
+    "block.BellBlockMixin",
     "block.JukeboxBlockMixin",
     "block.SugarCaneBlockMixin",
+    "block.entity.BellBlockEntityMixin",
     "block.entity.JukeboxBlockEntityMixin",
     "enchantment.DamageEnchantmentMixin",
     "enchantment.ProtectionEnchantmentMixin",

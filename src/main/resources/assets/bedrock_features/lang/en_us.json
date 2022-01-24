@@ -22,5 +22,6 @@
   "text.autoconfig.bedrock_features.option.doesMagicBypassProtection": "Does Magic Bypass Protection",
   "text.autoconfig.bedrock_features.option.jukeboxEmitRedstoneWhenPlaying": "Do Jukeboxes Emit Redstone When Playing",
   "text.autoconfig.bedrock_features.option.doDyeCauldronsObeyPrecipitation": "Do Dye Cauldrons Fill With Dripstone/Rain (MCPE-134433)",
-  "text.autoconfig.bedrock_features.option.doPotionCauldronsObeyPrecipitation": "Do Potion Cauldrons Fill With Dripstone/Rain (MCPE-134433)"
+  "text.autoconfig.bedrock_features.option.doPotionCauldronsObeyPrecipitation": "Do Potion Cauldrons Fill With Dripstone/Rain (MCPE-134433)",
+  "text.autoconfig.bedrock_features.option.bellsCanBeObserved": "Can Bells be observed by Observer"
 }
