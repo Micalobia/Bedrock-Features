@@ -10,6 +10,7 @@
     "features.BellRingState$StopRinging",
     "features.BuffSharpness",
     "features.CreeperHeadLimit",
+    "features.FlowerBonemealable",
     "features.JukeboxEmitRedstone$Playtime",
     "features.JukeboxEmitRedstone$State",
     "features.ProtectionMagicBypass",

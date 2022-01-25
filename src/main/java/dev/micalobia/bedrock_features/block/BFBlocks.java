@@ -41,6 +41,7 @@ public class BFBlocks {
 		Config.dyeCauldronObeysPrecipition = config.doDyeCauldronsObeyPrecipitation;
 		Config.potionCauldronObeysPrecipition = config.doPotionCauldronsObeyPrecipitation;
 		Config.bellCanBeObserved = config.bellsCanBeObserved;
+		Config.flowerCanBeBonemealed = config.areFlowersBonemealable;
 	}
 
 	@Environment(EnvType.CLIENT)
@@ -60,6 +61,7 @@ public class BFBlocks {
 		public static boolean dyeCauldronObeysPrecipition;
 		public static boolean potionCauldronObeysPrecipition;
 		public static boolean bellCanBeObserved;
+		public static boolean flowerCanBeBonemealed;
 
 		private Config() {
 		}

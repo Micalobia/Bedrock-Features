@@ -31,6 +31,7 @@ public class BFConfig implements ConfigData {
 	public boolean areAnvilsPushable = true;
 	public boolean jukeboxEmitRedstoneWhenPlaying = true;
 	public boolean bellsCanBeObserved = true;
+	public boolean areFlowersBonemealable = true;
 	public int chargedCreeperHeadLimit = -1;
 
 	private BFConfig() {

@@ -6,6 +6,7 @@ import dev.micalobia.bedrock_features.config.BFConfig;
 import dev.micalobia.bedrock_features.enchantment.BFEnchantments;
 import dev.micalobia.bedrock_features.entity.BFEntities;
 import dev.micalobia.bedrock_features.item.BFItems;
+import dev.micalobia.bedrock_features.world.gen.feature.BFFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
@@ -27,6 +28,7 @@ public class BedrockFeatures implements ModInitializer {
 		BFItems.init();
 		BFEnchantments.init();
 		BFEntities.init();
+		BFFeatures.init();
 		BFConfig.lateinit();
 	}
 }
