@@ -22,7 +22,6 @@ public class BFFeatures {
 
 	private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
 		var id = BedrockFeatures.id(name);
-		BedrockFeatures.LOGGER.info(id);
 		return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, id, configuredFeature);
 	}
 
