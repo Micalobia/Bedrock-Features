@@ -3,6 +3,7 @@ package dev.micalobia.bedrock_features.world.gen.feature;
 import dev.micalobia.bedrock_features.BedrockFeatures;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -12,11 +13,14 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class BFFeatures {
 	private static final Map<Identifier, ConfiguredFeature<RandomPatchFeatureConfig, ?>> FLOWER_FEATURES = new HashMap<>();
 
 	public static ConfiguredFeature<RandomPatchFeatureConfig, ?> getFlowerFeature(FlowerBlock block) {
+		if(block == Blocks.POPPY && new Random().nextBoolean()) block = (FlowerBlock) Blocks.DANDELION;
+		else if(block == Blocks.DANDELION && new Random().nextBoolean()) block = (FlowerBlock) Blocks.POPPY;
 		return FLOWER_FEATURES.get(Registry.BLOCK.getId(block));
 	}
 

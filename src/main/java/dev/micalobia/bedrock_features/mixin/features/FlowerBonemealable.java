@@ -39,7 +39,6 @@ public class FlowerBonemealable implements Fertilizable {
 
 	@Override
 	public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-		var feature = BFFeatures.getFlowerFeature(self()).getConfig().feature().get();
 		parent:
 		for(int i = 2; i < 16; ++i) {
 			var wandered = pos;
@@ -50,6 +49,7 @@ public class FlowerBonemealable implements Fertilizable {
 			}
 			var curState = world.getBlockState(wandered);
 			if(!curState.isAir()) continue;
+			var feature = BFFeatures.getFlowerFeature(self()).getConfig().feature().get();
 			feature.generateUnregistered(world, world.getChunkManager().getChunkGenerator(), random, wandered);
 		}
 	}
