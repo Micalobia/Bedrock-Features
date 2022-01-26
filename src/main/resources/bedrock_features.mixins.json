@@ -7,7 +7,6 @@
     "accessors.FoodComponentAccessor",
     "features.AnvilPushable",
     "features.BellRingState$StartRinging",
-    "features.BellRingState$StopRinging",
     "features.BuffSharpness",
     "features.CreeperHeadLimit",
     "features.FlowerBonemealable",
