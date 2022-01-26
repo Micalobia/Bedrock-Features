@@ -17,6 +17,8 @@ Adds some parity between Bedrock Edition and Java Edition
 - [Jukeboxes can be used with a hopper](https://minecraft.fandom.com/wiki/Jukebox#Usage)
 - [Charged Creepers can drop more than 1 mob head](https://minecraft.fandom.com/wiki/Creeper#Charged_creeper)
 - [Dye and Potion cauldrons can be filled with dripstone and rain](https://bugs.mojang.com/browse/MCPE-134433)
+- [Bells are Observable whilst ringing](https://minecraft.fandom.com/wiki/Bell#Block_states)
+- [Flowers are Bonemeal-able](https://minecraft.fandom.com/wiki/Flower#Post-generation)
 
 ## Config
 
