@@ -9,12 +9,12 @@ import dev.micalobia.bedrock_features.item.BFItems;
 import dev.micalobia.bedrock_features.world.gen.feature.BFFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class BedrockFeatures implements ModInitializer {
 	public static final String MODID = "bedrock_features";
-	public static final Logger LOGGER = LogManager.getLogger(MODID);
+	public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
 	public static Identifier id(String name) {
 		return new Identifier(MODID, name);
