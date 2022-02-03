@@ -19,6 +19,7 @@ Adds some parity between Bedrock Edition and Java Edition
 - [Dye and Potion cauldrons can be filled with dripstone and rain](https://bugs.mojang.com/browse/MCPE-134433)
 - [Bells are Observable whilst ringing](https://minecraft.fandom.com/wiki/Bell#Block_states)
 - [Flowers are Bonemeal-able](https://minecraft.fandom.com/wiki/Flower#Post-generation)
+- [Dirt/Grass paths are silkable](https://minecraft.fandom.com/wiki/Dirt_Path#Breaking)
 
 ## Config
 
@@ -31,6 +32,7 @@ Nearly everything is configurable, and the config can be found in `/config/bedro
   of [this](https://bugs.mojang.com/browse/MC-63534) and [this](https://bugs.mojang.com/browse/MCPE-18599)
 - Potion and Dye cauldrons filling with dripstone and rain is off by default because
   of [this](https://bugs.mojang.com/browse/MCPE-134433)
+- Dirt paths being silkable is disabled by default because of [this](https://bugs.mojang.com/browse/MCPE-10482)
 
 ## The future
 

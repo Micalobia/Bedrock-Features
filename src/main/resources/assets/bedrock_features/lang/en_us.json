@@ -24,5 +24,6 @@
   "text.autoconfig.bedrock_features.option.doDyeCauldronsObeyPrecipitation": "Do Dye Cauldrons Fill With Dripstone/Rain (MCPE-134433)",
   "text.autoconfig.bedrock_features.option.doPotionCauldronsObeyPrecipitation": "Do Potion Cauldrons Fill With Dripstone/Rain (MCPE-134433)",
   "text.autoconfig.bedrock_features.option.areFlowersBonemealable": "Are Small Flowers Bonemeal-able",
-  "text.autoconfig.bedrock_features.option.bellsCanBeObserved": "Can Bells be observed by Observer"
+  "text.autoconfig.bedrock_features.option.bellsCanBeObserved": "Can Bells be observed by Observer",
+  "text.autoconfig.bedrock_features.option.areDirtPathsSilkable": "Are Dirt Paths Silkable"
 }
