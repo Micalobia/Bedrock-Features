@@ -30,6 +30,7 @@
   "text.autoconfig.bedrock_features.option.doPotionCauldronsObeyPrecipitation.@Tooltip": "See MCPE-134433",
   "text.autoconfig.bedrock_features.option.areFlowersBonemealable": "Are Small Flowers Bonemeal-able",
   "text.autoconfig.bedrock_features.option.bellsCanBeObserved": "Can Bells be observed by Observer",
+  "text.autoconfig.bedrock_features.option.doSkeletonHorsesNeedSaddle": "Do Skeleton Horses Need a Saddle",
   "text.autoconfig.bedrock_features.option.areDirtPathsSilkable": "Are Dirt Paths Silkable",
   "text.autoconfig.bedrock_features.option.areDirtPathsSilkable.@Tooltip": "See MCPE-10482"
 }

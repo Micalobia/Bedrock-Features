@@ -39,6 +39,7 @@ public class BFConfig implements ConfigData {
 	public boolean areFlowersBonemealable = true;
 	@Tooltip
 	public boolean areDirtPathsSilkable = false;
+	public boolean doSkeletonHorsesNeedSaddle = false;
 	@Tooltip
 	public int chargedCreeperHeadLimit = -1;
 

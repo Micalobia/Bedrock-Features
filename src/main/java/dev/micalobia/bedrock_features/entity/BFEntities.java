@@ -11,12 +11,14 @@ public class BFEntities {
 		Config.creeperHeadDropLimit = config.chargedCreeperHeadLimit;
 		Config.shulkerDyeable = config.areShulkersDyeable;
 		Config.shulkerSurvivalDyeable = config.areShulkersDyeableInSurvival;
+		Config.skeletonHorseNeedsSaddle = config.doSkeletonHorsesNeedSaddle;
 	}
 
 	public static final class Config {
 		public static int creeperHeadDropLimit;
 		public static boolean shulkerDyeable;
 		public static boolean shulkerSurvivalDyeable;
+		public static boolean skeletonHorseNeedsSaddle;
 
 		private Config() {
 		}
