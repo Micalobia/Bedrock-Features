@@ -20,6 +20,9 @@ Adds some parity between Bedrock Edition and Java Edition
 - [Bells are Observable whilst ringing](https://minecraft.fandom.com/wiki/Bell#Block_states)
 - [Flowers are Bonemeal-able](https://minecraft.fandom.com/wiki/Flower#Post-generation)
 - [Dirt/Grass paths are silkable](https://minecraft.fandom.com/wiki/Dirt_Path#Breaking)
+- [Wool/Beds are redyeable](https://minecraft.fandom.com/wiki/Wool#Crafting)
+- [Improved barrel recipe](https://minecraft.fandom.com/wiki/Barrel#Crafting)
+- [Skeleton Horses don't require a saddle](https://minecraft.fandom.com/wiki/Skeleton_Horse#Riding)
 
 ## Config
 
