@@ -23,6 +23,7 @@ Adds some parity between Bedrock Edition and Java Edition
 - [Wool/Beds are redyeable](https://minecraft.fandom.com/wiki/Wool#Crafting)
 - [Improved barrel recipe](https://minecraft.fandom.com/wiki/Barrel#Crafting)
 - [Skeleton Horses don't require a saddle](https://minecraft.fandom.com/wiki/Skeleton_Horse#Riding)
+- [Burning entities can light campfires](https://minecraft.fandom.com/wiki/Campfire#Usage)
 
 ## Config
 

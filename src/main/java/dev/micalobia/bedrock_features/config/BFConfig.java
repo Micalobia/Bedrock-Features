@@ -40,6 +40,7 @@ public class BFConfig implements ConfigData {
 	@Tooltip
 	public boolean areDirtPathsSilkable = false;
 	public boolean doSkeletonHorsesNeedSaddle = false;
+	public boolean doBurningEntitiesLightCampfires = true;
 	@Tooltip
 	public int chargedCreeperHeadLimit = -1;
 
