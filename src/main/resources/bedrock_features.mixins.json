@@ -14,6 +14,7 @@
     "features.JukeboxEmitRedstone$Playtime",
     "features.JukeboxEmitRedstone$State",
     "features.ProtectionMagicBypass",
+    "features.RepeatingCommandBlockMinecart",
     "features.ShulkerDyeable",
     "features.SkeletonHorseSaddle$ChangeSaddleCheck",
     "features.SkeletonHorseSaddle$EnforceSaddleChanges",

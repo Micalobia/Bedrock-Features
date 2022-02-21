@@ -42,6 +42,8 @@ public class BFConfig implements ConfigData {
 	public boolean doSkeletonHorsesNeedSaddle = false;
 	public boolean doBurningEntitiesLightCampfires = true;
 	@Tooltip
+	public boolean areCommandBlockMinecartsRepeating = true;
+	@Tooltip
 	public int chargedCreeperHeadLimit = -1;
 
 	private BFConfig() {

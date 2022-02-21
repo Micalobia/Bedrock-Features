@@ -12,6 +12,7 @@ public class BFEntities {
 		Config.shulkerDyeable = config.areShulkersDyeable;
 		Config.shulkerSurvivalDyeable = config.areShulkersDyeableInSurvival;
 		Config.skeletonHorseNeedsSaddle = config.doSkeletonHorsesNeedSaddle;
+		Config.commandBlockMinecartIsRepeating = config.areCommandBlockMinecartsRepeating;
 	}
 
 	public static final class Config {
@@ -19,6 +20,7 @@ public class BFEntities {
 		public static boolean shulkerDyeable;
 		public static boolean shulkerSurvivalDyeable;
 		public static boolean skeletonHorseNeedsSaddle;
+		public static boolean commandBlockMinecartIsRepeating;
 
 		private Config() {
 		}

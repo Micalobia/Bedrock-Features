@@ -24,6 +24,7 @@ Adds some parity between Bedrock Edition and Java Edition
 - [Improved barrel recipe](https://minecraft.fandom.com/wiki/Barrel#Crafting)
 - [Skeleton Horses don't require a saddle](https://minecraft.fandom.com/wiki/Skeleton_Horse#Riding)
 - [Burning entities can light campfires](https://minecraft.fandom.com/wiki/Campfire#Usage)
+- [Command Block Minecarts are Repeating (visually)](https://minecraft.fandom.com/wiki/Minecart_with_Command_Block)
 
 ## Config
 
