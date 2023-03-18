@@ -11,6 +11,7 @@
     "features.CreeperHeadLimit",
     "features.FlowerBonemealable",
     "features.ProtectionMagicBypass",
+    "features.RepeatingCommandBlockMinecart",
     "features.ShulkerDyeable",
     "features.SkeletonHorseSaddle$ChangeSaddleCheck",
     "features.SkeletonHorseSaddle$EnforceSaddleChanges",

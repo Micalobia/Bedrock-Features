@@ -40,6 +40,8 @@ public class BFConfig implements ConfigData {
 	public boolean areDirtPathsSilkable = false;
 	public boolean doSkeletonHorsesNeedSaddle = false;
 	@Tooltip
+	public boolean areCommandBlockMinecartsRepeating = true;
+	@Tooltip
 	public int chargedCreeperHeadLimit = -1;
 
 	private BFConfig() {

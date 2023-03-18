@@ -21,6 +21,7 @@ Adds some parity between Bedrock Edition and Java Edition
 - [Wool/Beds are redyeable](https://minecraft.fandom.com/wiki/Wool#Crafting)
 - [Improved barrel recipe](https://minecraft.fandom.com/wiki/Barrel#Crafting)
 - [Skeleton Horses don't require a saddle](https://minecraft.fandom.com/wiki/Skeleton_Horse#Riding)
+- [Command Block Minecarts are Repeating (visually)](https://minecraft.fandom.com/wiki/Minecart_with_Command_Block)
 
 ## Config
 
