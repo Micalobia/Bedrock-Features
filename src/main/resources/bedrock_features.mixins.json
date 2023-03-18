@@ -8,6 +8,7 @@
     "features.AnvilPushable",
     "features.BellRingState$StartRinging",
     "features.BuffSharpness",
+    "features.CampfireLitByBurningEntity",
     "features.CreeperHeadLimit",
     "features.FlowerBonemealable",
     "features.ProtectionMagicBypass",
