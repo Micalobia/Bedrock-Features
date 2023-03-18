@@ -10,11 +10,9 @@ Adds some parity between Bedrock Edition and Java Edition
 - [Buffed Pufferfish](https://minecraft.fandom.com/wiki/Pufferfish_(item)#Food)
 - [Buffed Sharpness](https://minecraft.fandom.com/wiki/Sharpness#Usage)
 - [Dyeable Shulkers](https://minecraft.fandom.com/wiki/Shulker#Dyeing)
-- [Magic Bypasses Protection](https://minecraft.fandom.com/wiki/Protection#cite_ref-1)
+- [Magic Bypasses Protection](https://minecraft.fandom.com/wiki/Protection#cite_ref-1) (not currently working)
 - [Sugarcane is Bonemealable](https://minecraft.fandom.com/wiki/Sugar_Cane#Farming)
 - [Anvils are Pushable](https://minecraft.fandom.com/wiki/Anvil#Falling_anvils)
-- [Jukeboxes emit Redstone while playing](https://minecraft.fandom.com/wiki/Jukebox#Redstone_component)
-- [Jukeboxes can be used with a hopper](https://minecraft.fandom.com/wiki/Jukebox#Usage)
 - [Charged Creepers can drop more than 1 mob head](https://minecraft.fandom.com/wiki/Creeper#Charged_creeper)
 - [Dye and Potion cauldrons can be filled with dripstone and rain](https://bugs.mojang.com/browse/MCPE-134433)
 - [Bells are Observable whilst ringing](https://minecraft.fandom.com/wiki/Bell#Block_states)
@@ -30,7 +28,6 @@ Nearly everything is configurable, and the config can be found in `/config/bedro
 
 - Magic Bypasses Protection is off by default because of [this](https://bugs.mojang.com/browse/MCPE-40651)
 - Dyeable Shulkers are only dyeable in creative by default
-- Jukeboxes interfacing with hoppers is not configurable
 - Charged Creepers drop infinite heads by default, but you can change the number. I went with Bedrock default because
   of [this](https://bugs.mojang.com/browse/MC-63534) and [this](https://bugs.mojang.com/browse/MCPE-18599)
 - Potion and Dye cauldrons filling with dripstone and rain is off by default because

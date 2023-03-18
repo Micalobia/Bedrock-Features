@@ -6,7 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 
 public class BFBlockEntities {
 	public static BlockEntityType<DyeCauldronBlockEntity> DYE_CAULDRON;
@@ -20,8 +21,8 @@ public class BFBlockEntities {
 	@SuppressWarnings("unchecked")
 	public static <E extends BlockEntity, B extends Block & BlockEntityProvider> BlockEntityType<E> register(B block) {
 		return Registry.register(
-				Registry.BLOCK_ENTITY_TYPE,
-				Registry.BLOCK.getId(block),
+				Registries.BLOCK_ENTITY_TYPE,
+				Registries.BLOCK.getId(block),
 				FabricBlockEntityTypeBuilder.create(
 						(pos, state) -> (E) block.createBlockEntity(pos, state), block
 				).build()

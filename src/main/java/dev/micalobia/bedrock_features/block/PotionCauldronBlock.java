@@ -29,6 +29,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome.Precipitation;
@@ -37,7 +38,6 @@ import net.minecraft.world.event.GameEvent;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Random;
 
 public class PotionCauldronBlock extends LeveledCauldronBlock implements BlockEntityProvider {
 	public PotionCauldronBlock(Settings settings) {

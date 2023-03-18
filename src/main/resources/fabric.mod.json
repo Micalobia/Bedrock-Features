@@ -28,14 +28,14 @@
     "bedrock_features.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.14.17",
     "fabric": "*",
-    "minecraft": "1.18.x",
+    "minecraft": "1.19.4",
     "java": ">=17",
-    "cloth-config2": ">=6.0.45",
-    "micalibria": ">=2.0.0"
+    "cloth-config2": ">=10.0.96",
+    "micalibria": ">=2.2.2"
   },
   "suggests": {
-    "modmenu": "3.0.x"
+    "modmenu": "6.1.0-rc.4"
   }
 }

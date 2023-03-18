@@ -2,7 +2,6 @@ package dev.micalobia.bedrock_features.block;
 
 import dev.micalobia.bedrock_features.BedrockFeatures;
 import dev.micalobia.bedrock_features.config.BFConfig;
-import dev.micalobia.bedrock_features.config.JukeboxConfig;
 import dev.micalobia.bedrock_features.state.property.BedrockProperties;
 import dev.micalobia.micalibria.block.BlockUtility;
 import net.fabricmc.api.EnvType;
@@ -28,16 +27,12 @@ public class BFBlocks {
 		PotionCauldronBlock.Behaviors.init();
 		POTION_CAULDRON = register("potion_cauldron", new PotionCauldronBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)));
 		BFConfig.CHANGED.register(BFBlocks::onConfigChanged);
-		BlockUtility.injectBlockstateProperty(JukeboxBlock.class, Properties.POWERED, false);
 		BlockUtility.injectBlockstateProperty(BellBlock.class, BedrockProperties.RINGING, false);
-		JukeboxConfig.init();
-		ItemStorage.SIDED.registerForBlockEntity(((entity, direction) -> new JukeboxStorage(entity)), BlockEntityType.JUKEBOX);
 	}
 
 	private static void onConfigChanged(BFConfig config) {
 		Config.sugarcaneCanBeBonemealed = config.isSugarcaneBonemealable;
 		Config.anvilCanBePushed = config.areAnvilsPushable;
-		Config.jukeboxEmitsRedstone = config.jukeboxEmitRedstoneWhenPlaying;
 		Config.dyeCauldronObeysPrecipition = config.doDyeCauldronsObeyPrecipitation;
 		Config.potionCauldronObeysPrecipition = config.doPotionCauldronsObeyPrecipitation;
 		Config.bellCanBeObserved = config.bellsCanBeObserved;

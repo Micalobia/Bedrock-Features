@@ -21,10 +21,8 @@ public class BFFoodComponents {
 
 	public static void buffPufferfish(boolean buff) {
 		if(buff) {
-			changeStatusEffect(FoodComponents.PUFFERFISH, 0, new StatusEffectInstance(StatusEffects.POISON, 1200, 3));
 			changeStatusEffect(FoodComponents.PUFFERFISH, 2, new StatusEffectInstance(StatusEffects.NAUSEA, 300, 1));
 		} else {
-			changeStatusEffect(FoodComponents.PUFFERFISH, 0, new StatusEffectInstance(StatusEffects.POISON, 1200, 1));
 			changeStatusEffect(FoodComponents.PUFFERFISH, 2, new StatusEffectInstance(StatusEffects.NAUSEA, 300, 0));
 		}
 	}

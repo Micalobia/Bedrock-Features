@@ -14,6 +14,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -21,7 +22,6 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome.Precipitation;
@@ -88,8 +88,8 @@ public class DyeCauldronBlock extends LeveledCauldronBlock implements BlockEntit
 
 		public static void init() {
 			BFConfig.CHANGED.register(Behaviors::onConfigChanged);
-			for(var item : Registry.ITEM) registerItem(item);
-			RegistryEntryAddedCallback.event(Registry.ITEM).register(((rawId, id, item) -> registerItem(item)));
+			for(var item : Registries.ITEM) registerItem(item);
+			RegistryEntryAddedCallback.event(Registries.ITEM).register(((rawId, id, item) -> registerItem(item)));
 			MAP.put(Items.WATER_BUCKET, CauldronBehavior.FILL_WITH_WATER);
 			MAP.put(Items.LAVA_BUCKET, CauldronBehavior.FILL_WITH_LAVA);
 			MAP.put(Items.POWDER_SNOW_BUCKET, CauldronBehavior.FILL_WITH_POWDER_SNOW);

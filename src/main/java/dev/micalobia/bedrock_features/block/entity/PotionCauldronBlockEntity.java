@@ -10,8 +10,8 @@ import net.minecraft.nbt.NbtList;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 
 import java.util.Collection;
 import java.util.List;
@@ -62,7 +62,7 @@ public class PotionCauldronBlockEntity extends MBlockEntity {
 
 	@Override
 	public void writeToNbt(NbtCompound nbt) {
-		nbt.putString("Potion", Registry.POTION.getId(this.potion).toString());
+		nbt.putString("Potion", Registries.POTION.getId(this.potion).toString());
 		nbt.putInt("Color", this.customColor);
 		NbtList list = new NbtList();
 		for(StatusEffectInstance effect : this.customEffects) list.add(effect.writeNbt(new NbtCompound()));

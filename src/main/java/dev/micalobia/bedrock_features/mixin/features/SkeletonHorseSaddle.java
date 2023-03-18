@@ -3,7 +3,7 @@ package dev.micalobia.bedrock_features.mixin.features;
 import dev.micalobia.bedrock_features.entity.BFEntities.Config;
 import net.minecraft.entity.JumpingMount;
 import net.minecraft.entity.mob.SkeletonHorseEntity;
-import net.minecraft.entity.passive.HorseBaseEntity;
+import net.minecraft.entity.passive.AbstractHorseEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,23 +12,30 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 public abstract class SkeletonHorseSaddle {
-	@Mixin(value = HorseBaseEntity.class, priority = 1001)
+	@Mixin(value = AbstractHorseEntity.class, priority = 1001)
 	public static abstract class EnforceSaddleChanges implements JumpingMount {
 		@Shadow
 		public abstract boolean isSaddled();
 
-		@Redirect(method = "travel", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/HorseBaseEntity;isSaddled()Z"))
-		private boolean changeSaddleMovementBehavior(HorseBaseEntity horse) {
+
+		// TODO
+//		@Redirect(method = "travel", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;isSaddled()Z"))
+//		private boolean changeSaddleMovementBehavior(AbstractHorseEntity horse) {
+//			return BedrockFeatures$isSaddled();
+//		}
+
+		@Redirect(method = "getControllingPassenger", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;isSaddled()Z"))
+		private boolean changeSaddleControllingBehavior(AbstractHorseEntity instance) {
 			return BedrockFeatures$isSaddled();
 		}
 
-		@Redirect(method = "setJumpStrength", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/HorseBaseEntity;isSaddled()Z"))
-		private boolean changeSaddleJumpBehavior(HorseBaseEntity horse) {
+		@Redirect(method = "setJumpStrength", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;isSaddled()Z"))
+		private boolean changeSaddleJumpBehavior(AbstractHorseEntity horse) {
 			return BedrockFeatures$isSaddled();
 		}
 
-		@Redirect(method = "isImmobile", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/HorseBaseEntity;isSaddled()Z"))
-		private boolean changeSaddleImmobileBehavior(HorseBaseEntity horse) {
+		@Redirect(method = "isImmobile", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/AbstractHorseEntity;isSaddled()Z"))
+		private boolean changeSaddleImmobileBehavior(AbstractHorseEntity horse) {
 			return BedrockFeatures$isSaddled();
 		}
 
