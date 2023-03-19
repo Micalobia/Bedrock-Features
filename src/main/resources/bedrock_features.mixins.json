@@ -13,12 +13,14 @@
     "features.FlowerBonemealable",
     "features.ProtectionMagicBypass",
     "features.RepeatingCommandBlockMinecart",
+    "features.SalmonSizes$ChangeSize",
     "features.ShulkerDyeable",
     "features.SkeletonHorseSaddle$ChangeSaddleCheck",
     "features.SkeletonHorseSaddle$EnforceSaddleChanges",
     "features.SugarcaneBonemealable"
   ],
   "client": [
+    "features.SalmonSizes$VisuallyChangeSize"
   ],
   "injectors": {
     "defaultRequire": 1

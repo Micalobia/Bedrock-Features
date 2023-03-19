@@ -23,6 +23,7 @@ Adds some parity between Bedrock Edition and Java Edition
 - [Skeleton Horses don't require a saddle](https://minecraft.fandom.com/wiki/Skeleton_Horse#Riding)
 - [Burning entities can light campfires](https://minecraft.fandom.com/wiki/Campfire#Usage)
 - [Command Block Minecarts are Repeating (visually)](https://minecraft.fandom.com/wiki/Minecart_with_Command_Block)
+- [Salmon can vary in size](https://minecraft.fandom.com/wiki/Salmon#Bedrock_Edition)
 
 ## Config
 
@@ -35,6 +36,7 @@ Nearly everything is configurable, and the config can be found in `/config/bedro
 - Potion and Dye cauldrons filling with dripstone and rain is off by default because
   of [this](https://bugs.mojang.com/browse/MCPE-134433)
 - Dirt paths being silkable is disabled by default because of [this](https://bugs.mojang.com/browse/MCPE-10482)
+- Salmon having size variation doesn't have a config, to avoid weirdness around the hitbox changing in-game
 
 ## The future
 
